@@ -13,6 +13,8 @@ public class MovimientoDinero {
     private int id;
     private long monto;
     private String concepto;
+
+    private String bitacora;
     @ManyToOne
     @JoinColumn(name = "empleado_id")
     private Empleado usuario;
@@ -23,11 +25,12 @@ public class MovimientoDinero {
     public MovimientoDinero() {
     }
 
-    public MovimientoDinero(long monto, String concepto, Empleado empleado, Date fecha) {
+    public MovimientoDinero(long monto, String concepto, Empleado empleado, Date fecha, String bitacora) {
         this.monto = monto;
         this.concepto = concepto;
         this.usuario = empleado;
         this.fecha=fecha;
+        this.bitacora=bitacora;
     }
 
     public int getId() {
@@ -68,5 +71,13 @@ public class MovimientoDinero {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    public String getBitacora() {
+        return bitacora;
+    }
+
+    public void setBitacora(String bitacora) {
+        this.bitacora = bitacora;
     }
 }
