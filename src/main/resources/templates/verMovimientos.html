@@ -30,10 +30,11 @@
     <br><table class="table table-bordered">
     <tr>
         <th>ID</th>
-        <th class="text-right">Valor</th>
+        <th>Valor</th>
         <th>Concepto</th>
         <th>Usuario Responsable</th>
         <th>Fecha del Movimiento</th>
+        <th>Descripción</th>
         <th>Editar</th>
         <th>Eliminar</th>
     </tr>
@@ -53,6 +54,7 @@
         <td th:if="${movimiento.concepto=='8'}">Nomina</td>
         <td th:text="${movimiento.usuario.nombre}"></td>
         <td th:text="${#dates.format(movimiento.fecha, 'dd/MM/yyyy')}"></td>
+        <td th:text="${movimiento.bitacora}"></td>
         <td><button type="button" class="btn btn-warning"><a th:href="@{/EditarMovimiento/{id}(id=${movimiento.id})}">Editar</a></button></td>
         <td><button type="button" class="btn btn-danger"><a th:href="@{/EliminarMovimiento/{id}(id=${movimiento.id})}">Eliminar</a></button></td>
     </tr>
