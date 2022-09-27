@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar target/WebServiceLogin-0.0.1-SNAPSHOT.jar
+web: java -Dserver.port=$PORT -jar target/controlador_financiero-0.0.1-SNAPSHOT.jar
